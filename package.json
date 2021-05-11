@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/tediko/easybank-landing-page#readme",
   "devDependencies": {
-    "laravel-mix": "^6.0.19"
+    "laravel-mix": "^6.0.19",
+    "postcss": "^8.1.14",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1"
   }
 }
