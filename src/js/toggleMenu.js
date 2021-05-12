@@ -35,23 +35,25 @@ export default class ToggleMenu {
     // Hamburger menu event listener
     setupEvents() {
         this.menu.addEventListener('click', () => this.toggle());
+        this.overlay.addEventListener('click', () => this.hide());
+        window.addEventListener('resize', () => this.disableOnDesktop());
     }
 
     // Toggle menu
     toggle() {
         !this.open ? this.show() : this.hide();
     }
-
+    
     // Show animation when menu is open
     show() {
         this.menu.style.pointerEvents = 'none';
-
+        
         this.nav.classList.add(`${this.selectors.menuOpenClass}`);
         this.nav.classList.add(`${this.selectors.navOpenClass}`);
         this.overlay.classList.add(`${this.selectors.activeClass}`);
         this.body.classList.add(`${this.selectors.overflowClass}`);
         
-        this.expanded = !this.expanded;
+        this.expanded = true;
         this.menu.setAttribute('aria-expanded', this.expanded);
         this.open = true;
         
@@ -69,7 +71,7 @@ export default class ToggleMenu {
         this.nav.classList.remove(`${this.selectors.menuOpenClass}`);
         this.overlay.classList.remove(`${this.selectors.activeClass}`);
         
-        this.expanded = !this.expanded;
+        this.expanded = false;
         this.menu.setAttribute('aria-expanded', this.expanded);
         
         this.timer = window.setTimeout(() => {
@@ -80,5 +82,22 @@ export default class ToggleMenu {
             this.menu.style.pointerEvents = 'all';
         }, this.duration)
         this.open = false;
+    }
+    
+    // Disable mobile menu on desktop
+    disableOnDesktop() {
+        this.windowWidth = window.innerWidth;
+        this.tabletBreakpoint = 769;
+
+        if (this.windowWidth >= this.tabletBreakpoint) {
+            this.nav.classList.remove(`${this.selectors.menuOpenClass}`);
+            this.nav.classList.remove(`${this.selectors.navOpenClass}`);
+            this.nav.classList.remove(`${this.selectors.navCloseClass}`);
+            this.overlay.classList.remove(`${this.selectors.activeClass}`);
+            this.body.classList.remove(`${this.selectors.overflowClass}`);
+            this.expanded = false;
+            this.menu.setAttribute('aria-expanded', this.expanded);
+            this.open = false;
+        }
     }
 }
