@@ -1,11 +1,131 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggleMenu */ "./src/js/toggleMenu.js");
+
+var menu = new _toggleMenu__WEBPACK_IMPORTED_MODULE_0__.default();
+
+/***/ }),
+
+/***/ "./src/js/toggleMenu.js":
+/*!******************************!*\
+  !*** ./src/js/toggleMenu.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ToggleMenu)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ToggleMenu = /*#__PURE__*/function () {
+  function ToggleMenu() {
+    _classCallCheck(this, ToggleMenu);
+
+    if (!this.vars()) return false;
+    this.setupEvents();
+  }
+
+  _createClass(ToggleMenu, [{
+    key: "vars",
+    value: function vars() {
+      this.selectors = {
+        body: 'data-body',
+        nav: 'data-nav',
+        menu: 'data-menu',
+        overlay: 'data-overlay',
+        menuOpenClass: 'menu-open',
+        navOpenClass: 'nav-open',
+        navCloseClass: 'nav-close',
+        activeClass: 'active',
+        overflowClass: 'overflow'
+      };
+      this.body = document.querySelector("[".concat(this.selectors.body, "]"));
+      this.nav = document.querySelector("[".concat(this.selectors.nav, "]"));
+      this.menu = document.querySelector("[".concat(this.selectors.menu, "]"));
+      this.overlay = document.querySelector("[".concat(this.selectors.overlay, "]"));
+      if (!this.body || !this.nav || !this.menu || !this.overlay) return false;
+      this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
+      this.open = false;
+      this.timer;
+      return true;
+    } // Hamburger menu event listener
+
+  }, {
+    key: "setupEvents",
+    value: function setupEvents() {
+      var _this = this;
+
+      this.menu.addEventListener('click', function () {
+        return _this.toggle();
+      });
+    } // Toggle menu
+
+  }, {
+    key: "toggle",
+    value: function toggle() {
+      !this.open ? this.show() : this.hide();
+    } // Show animation when menu is open
+
+  }, {
+    key: "show",
+    value: function show() {
+      var _this2 = this;
+
+      this.menu.style.pointerEvents = 'none';
+      this.nav.classList.add("".concat(this.selectors.menuOpenClass));
+      this.nav.classList.add("".concat(this.selectors.navOpenClass));
+      this.overlay.classList.add("".concat(this.selectors.activeClass));
+      this.body.classList.add("".concat(this.selectors.overflowClass));
+      this.expanded = !this.expanded;
+      this.menu.setAttribute('aria-expanded', this.expanded);
+      this.open = true;
+      this.timer = window.setTimeout(function () {
+        _this2.menu.style.pointerEvents = 'all';
+        _this2.timer = false;
+      }, 1000);
+    } // Show animation when menu is close
+
+  }, {
+    key: "hide",
+    value: function hide() {
+      var _this3 = this;
+
+      this.menu.style.pointerEvents = 'none';
+      this.nav.classList.add("".concat(this.selectors.navCloseClass));
+      this.nav.classList.remove("".concat(this.selectors.menuOpenClass));
+      this.overlay.classList.remove("".concat(this.selectors.activeClass));
+      this.expanded = !this.expanded;
+      this.menu.setAttribute('aria-expanded', this.expanded);
+      this.timer = window.setTimeout(function () {
+        _this3.nav.classList.remove("".concat(_this3.selectors.navOpenClass));
+
+        _this3.nav.classList.remove("".concat(_this3.selectors.navCloseClass));
+
+        _this3.body.classList.remove("".concat(_this3.selectors.overflowClass));
+
+        _this3.timer = false;
+        _this3.menu.style.pointerEvents = 'all';
+      }, 1000);
+      this.open = false;
+    }
+  }]);
+
+  return ToggleMenu;
+}();
 
 
 
@@ -17,7 +137,6 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -82,6 +201,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	
