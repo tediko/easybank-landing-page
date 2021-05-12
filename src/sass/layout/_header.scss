@@ -57,6 +57,8 @@
                     @for $i from 1 through 5 {
                         &:nth-child(#{$i}) {
                             transform: translateX(0);
+                            transition: transform 800ms ease-in-out;
+                            transition-delay: 100ms * $i;
                         }
                     }
                 }
@@ -168,8 +170,6 @@
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) {
                 transform: translateX(-100px + (-200px * $i));
-                transition: transform 800ms ease-in-out;
-                transition-delay: 100ms * $i;
             }
         }
     }
