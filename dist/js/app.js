@@ -73,6 +73,12 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.menu.addEventListener('click', function () {
         return _this.toggle();
       });
+      this.overlay.addEventListener('click', function () {
+        return _this.hide();
+      });
+      window.addEventListener('resize', function () {
+        return _this.disableOnDesktop();
+      });
     } // Toggle menu
 
   }, {
@@ -91,7 +97,7 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.nav.classList.add("".concat(this.selectors.navOpenClass));
       this.overlay.classList.add("".concat(this.selectors.activeClass));
       this.body.classList.add("".concat(this.selectors.overflowClass));
-      this.expanded = !this.expanded;
+      this.expanded = true;
       this.menu.setAttribute('aria-expanded', this.expanded);
       this.open = true;
       this.timer = window.setTimeout(function () {
@@ -109,7 +115,7 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.nav.classList.add("".concat(this.selectors.navCloseClass));
       this.nav.classList.remove("".concat(this.selectors.menuOpenClass));
       this.overlay.classList.remove("".concat(this.selectors.activeClass));
-      this.expanded = !this.expanded;
+      this.expanded = false;
       this.menu.setAttribute('aria-expanded', this.expanded);
       this.timer = window.setTimeout(function () {
         _this3.nav.classList.remove("".concat(_this3.selectors.navOpenClass));
@@ -122,6 +128,24 @@ var ToggleMenu = /*#__PURE__*/function () {
         _this3.menu.style.pointerEvents = 'all';
       }, this.duration);
       this.open = false;
+    } // Disable mobile menu on desktop
+
+  }, {
+    key: "disableOnDesktop",
+    value: function disableOnDesktop() {
+      this.windowWidth = window.innerWidth;
+      this.tabletBreakpoint = 769;
+
+      if (this.windowWidth >= this.tabletBreakpoint) {
+        this.nav.classList.remove("".concat(this.selectors.menuOpenClass));
+        this.nav.classList.remove("".concat(this.selectors.navOpenClass));
+        this.nav.classList.remove("".concat(this.selectors.navCloseClass));
+        this.overlay.classList.remove("".concat(this.selectors.activeClass));
+        this.body.classList.remove("".concat(this.selectors.overflowClass));
+        this.expanded = false;
+        this.menu.setAttribute('aria-expanded', this.expanded);
+        this.open = false;
+      }
     }
   }]);
 
