@@ -8,10 +8,21 @@
     background-color: $c-white;
     z-index: 20;
 
+    @include breakpoint('md') {
+        padding: 18px 24px;
+    }
+
     &__container {
         position: relative;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint('md') {
+            max-width: 1110px;
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 
     &__logo-img {
@@ -48,6 +59,10 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+
+        @include breakpoint('md') {
+            display: none;
+        }
     }
 
     &__nav-menu-bars {
@@ -97,16 +112,44 @@
         background: $c-white;
         list-style: none;
         border-radius: 5px;
-        transform: translateX(-50%);
+        transform: translateX(-150%);
         visibility: hidden;
-    }
 
+        @include breakpoint('md') {
+            position: unset;
+            flex-flow: row;
+            align-items: unset;
+            gap: 30.5px;
+            top: unset;
+            left: unset;
+            width: unset;
+            padding: 0;
+            background: unset;
+            border-radius: unset;
+            transform: translateX(0);
+            visibility: visible;
+            font-size: 0.77rem;
+        }
+
+        @include breakpoint('lg') {
+            margin-left: 24px;
+        }
+    }
+    
     &__nav-link {
         color: $c-blue-dark;
         text-decoration: none;
+
+        @include breakpoint('md') {
+            color: $c-blue-grayish;
+        }
     }
 
     &__cta {
         display: none;
+
+        @include breakpoint('md') {
+            display: flex;
+        }
     }
 }
