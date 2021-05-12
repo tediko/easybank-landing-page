@@ -1,1 +1,27 @@
 @use '../utilities/variables' as *;
+
+/* Navigation */
+@keyframes nav-in {
+    0% {
+        visibility: visible;
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+}
+@keyframes nav-out {
+    0% {
+        visibility: visible;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    100% {
+        visibility: visible;
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
