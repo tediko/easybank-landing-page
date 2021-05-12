@@ -1,6 +1,11 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+// Overflow
+.overflow {
+    overflow: hidden;
+}
+
 // Overlay
 .menu-overlay {
     position: fixed;
