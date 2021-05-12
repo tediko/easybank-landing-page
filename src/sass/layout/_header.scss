@@ -172,6 +172,14 @@
                 transform: translateX(-100px + (-200px * $i));
             }
         }
+
+        @include breakpoint('md') {
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    transform: translateX(0);
+                }
+            }
+        }
     }
 
     &__nav-link {

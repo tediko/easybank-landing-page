@@ -386,6 +386,23 @@ i {
 .header__nav-item:nth-child(5) {
   transform: translateX(-1100px);
 }
+@media (min-width: 769px) {
+  .header__nav-item:nth-child(1) {
+    transform: translateX(0);
+  }
+  .header__nav-item:nth-child(2) {
+    transform: translateX(0);
+  }
+  .header__nav-item:nth-child(3) {
+    transform: translateX(0);
+  }
+  .header__nav-item:nth-child(4) {
+    transform: translateX(0);
+  }
+  .header__nav-item:nth-child(5) {
+    transform: translateX(0);
+  }
+}
 .header__nav-link {
   color: #2d314d;
   text-decoration: none;
