@@ -213,6 +213,13 @@ i {
     margin: 0 auto;
   }
 }
+.header__logo:focus {
+  outline: none;
+}
+.header__logo:focus-visible {
+  outline: 3px dashed #31d35c;
+  outline-offset: 4px;
+}
 .header__logo-img {
   display: block;
 }

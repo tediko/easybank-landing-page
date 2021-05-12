@@ -25,6 +25,16 @@
         }
     }
 
+    &__logo {
+        &:focus {
+            outline: none;
+        }
+        &:focus-visible {
+            outline: 3px dashed $c-green-lime;
+            outline-offset: 4px;
+        }
+    }
+
     &__logo-img {
         display: block;
     }
