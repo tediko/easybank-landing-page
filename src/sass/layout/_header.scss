@@ -193,11 +193,48 @@
     }
 
     &__nav-link {
+        position: relative;
         color: $c-blue-dark;
         text-decoration: none;
 
         @include breakpoint('md') {
             color: $c-blue-grayish;
+            transition: color 300ms ease-in;
+
+            &:hover {
+                color: $c-blue-dark;
+
+                &::before {
+                    transform: scaleX(1);
+                    opacity: 1;
+                }
+            }
+
+            &:focus {
+                color: $c-blue-dark;
+                outline: none;
+
+                &::before {
+                    transform: scaleX(1);
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                bottom: -31px;
+                left: 0;
+                background-image: linear-gradient(to right, $c-green-lime, $c-cyan);
+                width: 100%;
+                height: 4px;
+                opacity: 0;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 300ms ease-in,
+                            opacity 300ms ease-in;
+            }
+
         }
     }
 
