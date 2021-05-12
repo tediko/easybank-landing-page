@@ -149,6 +149,10 @@ i {
   color: #fff;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -233,18 +237,28 @@ i {
 }
 .header__nav.nav-open .header__nav-list .header__nav-item:nth-child(1) {
   transform: translateX(0);
+  transition: transform 800ms ease-in-out;
+  transition-delay: 100ms;
 }
 .header__nav.nav-open .header__nav-list .header__nav-item:nth-child(2) {
   transform: translateX(0);
+  transition: transform 800ms ease-in-out;
+  transition-delay: 200ms;
 }
 .header__nav.nav-open .header__nav-list .header__nav-item:nth-child(3) {
   transform: translateX(0);
+  transition: transform 800ms ease-in-out;
+  transition-delay: 300ms;
 }
 .header__nav.nav-open .header__nav-list .header__nav-item:nth-child(4) {
   transform: translateX(0);
+  transition: transform 800ms ease-in-out;
+  transition-delay: 400ms;
 }
 .header__nav.nav-open .header__nav-list .header__nav-item:nth-child(5) {
   transform: translateX(0);
+  transition: transform 800ms ease-in-out;
+  transition-delay: 500ms;
 }
 .header__nav.nav-close .header__nav-list {
   -webkit-animation: nav-out 1.3s cubic-bezier(0.68, -0.12, 0.53, 1.14) forwards;
@@ -359,28 +373,18 @@ i {
 }
 .header__nav-item:nth-child(1) {
   transform: translateX(-300px);
-  transition: transform 800ms ease-in-out;
-  transition-delay: 100ms;
 }
 .header__nav-item:nth-child(2) {
   transform: translateX(-500px);
-  transition: transform 800ms ease-in-out;
-  transition-delay: 200ms;
 }
 .header__nav-item:nth-child(3) {
   transform: translateX(-700px);
-  transition: transform 800ms ease-in-out;
-  transition-delay: 300ms;
 }
 .header__nav-item:nth-child(4) {
   transform: translateX(-900px);
-  transition: transform 800ms ease-in-out;
-  transition-delay: 400ms;
 }
 .header__nav-item:nth-child(5) {
   transform: translateX(-1100px);
-  transition: transform 800ms ease-in-out;
-  transition-delay: 500ms;
 }
 .header__nav-link {
   color: #2d314d;
