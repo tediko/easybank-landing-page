@@ -49,6 +49,34 @@
                 }
             }
         }
+
+        &.nav-open {
+            #{$root}__nav-list {
+                animation: nav-in 1s cubic-bezier(.68,-0.12,.53,1.14) forwards;
+                #{$root}__nav-item {
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i}) {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.nav-close {
+            #{$root}__nav-list {
+                animation: nav-out 1.3s cubic-bezier(.68,-0.12,.53,1.14) forwards;
+                #{$root}__nav-item {
+                    @for $i from 1 through 5 {
+                        &:nth-child(#{$i}) {
+                            transform: translateX(100px + (200px * $i));
+                            transition: transform 800ms ease-in-out;
+                            transition-delay: 100ms * $i;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &__nav-menu {
@@ -136,6 +164,16 @@
         }
     }
     
+    &__nav-item {
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                transform: translateX(-100px + (-200px * $i));
+                transition: transform 800ms ease-in-out;
+                transition-delay: 100ms * $i;
+            }
+        }
+    }
+
     &__nav-link {
         color: $c-blue-dark;
         text-decoration: none;
