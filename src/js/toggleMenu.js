@@ -26,6 +26,7 @@ export default class ToggleMenu {
 
         this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
         this.open = false;
+        this.duration = 1000;
         this.timer;
 
         return true;
@@ -57,7 +58,7 @@ export default class ToggleMenu {
         this.timer = window.setTimeout(() => {
             this.menu.style.pointerEvents = 'all';
             this.timer = false;
-        }, 1000);
+        }, this.duration);
     }
     
     // Show animation when menu is close
@@ -77,7 +78,7 @@ export default class ToggleMenu {
             this.body.classList.remove(`${this.selectors.overflowClass}`);
             this.timer = false
             this.menu.style.pointerEvents = 'all';
-        }, 1000)
+        }, this.duration)
         this.open = false;
     }
 }

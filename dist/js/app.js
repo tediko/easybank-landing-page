@@ -60,6 +60,7 @@ var ToggleMenu = /*#__PURE__*/function () {
       if (!this.body || !this.nav || !this.menu || !this.overlay) return false;
       this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
       this.open = false;
+      this.duration = 1000;
       this.timer;
       return true;
     } // Hamburger menu event listener
@@ -96,7 +97,7 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.timer = window.setTimeout(function () {
         _this2.menu.style.pointerEvents = 'all';
         _this2.timer = false;
-      }, 1000);
+      }, this.duration);
     } // Show animation when menu is close
 
   }, {
@@ -119,7 +120,7 @@ var ToggleMenu = /*#__PURE__*/function () {
 
         _this3.timer = false;
         _this3.menu.style.pointerEvents = 'all';
-      }, 1000);
+      }, this.duration);
       this.open = false;
     }
   }]);
