@@ -100,6 +100,115 @@ i {
   color: #fff;
 }
 
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(#2d314d, transparent);
+  transition: opacity 300ms ease-in;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+}
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header {
+  position: relative;
+  padding: 22px 24px;
+  background-color: white;
+  z-index: 20;
+}
+.header__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo-img {
+  display: block;
+}
+.header__nav.menu-open .header__nav-menu-bars {
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: rotate(225deg);
+}
+.header__nav.menu-open .header__nav-menu-bars::before {
+  top: 0;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+  opacity: 0;
+}
+.header__nav.menu-open .header__nav-menu-bars::after {
+  bottom: 0;
+  transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+  transform: rotate(-90deg);
+}
+.header__nav-menu {
+  position: relative;
+  display: flex;
+  width: 25px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.header__nav-menu-bars {
+  position: relative;
+  width: 25px;
+  height: 1px;
+  background-color: black;
+  top: 50%;
+  border-radius: 10px;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-duration: 0.22s;
+}
+.header__nav-menu-bars::before, .header__nav-menu-bars::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  border-radius: 10px;
+}
+.header__nav-menu-bars::before {
+  top: -6px;
+  transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+.header__nav-menu-bars::after {
+  bottom: -6px;
+  transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.header__nav-list {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 24px;
+  top: 66px;
+  left: 50%;
+  width: 100%;
+  padding: 32px;
+  background: white;
+  list-style: none;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  visibility: hidden;
+}
+.header__nav-link {
+  color: #2d314d;
+  text-decoration: none;
+}
+.header__cta {
+  display: none;
+}
+
 /* Base */
 /* Vendors */
 /* Utilities */
