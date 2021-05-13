@@ -114,6 +114,14 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+button:focus {
+  outline: none;
+}
+button:focus-visible {
+  outline: 3px dashed #31d35c;
+  outline-offset: 4px;
+}
+
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?rk3na0");

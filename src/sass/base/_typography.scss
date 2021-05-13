@@ -14,7 +14,7 @@ body {
 // Anchor elements
 a {
     text-decoration: none;
-    
+
     &:focus {
         outline: none;
     }
@@ -23,4 +23,16 @@ a {
         outline: 3px dashed $c-green-lime;
         outline-offset: 4px;
     }
+}
+
+// Button elements
+button {
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 3px dashed $c-green-lime;
+        outline-offset: 4px;
+    } 
 }
