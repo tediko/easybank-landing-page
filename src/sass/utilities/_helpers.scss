@@ -35,7 +35,7 @@
     &--gradient {
         @extend .btn;
         position: relative;
-        padding: 13px 25px;
+        padding: 13px 32px;
         background-image: linear-gradient(to right, $c-green-lime, $c-cyan);
         border-radius: 24px;
         font-size: 0.8rem;
@@ -81,6 +81,10 @@
                     transition: left 550ms cubic-bezier(0.19, 1, 0.22, 1);
                 }
             }
+        }
+
+        @include breakpoint('md') {
+            padding: 13px 25px;
         }
         
         @include breakpoint('lg') {
