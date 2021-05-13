@@ -61,7 +61,9 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
       this.open = false;
       this.duration = 1000;
+      this.touchDuration = 1300;
       this.timer;
+      this.touchEnabled = true;
       return true;
     } // Hamburger menu event listener
 
@@ -78,6 +80,15 @@ var ToggleMenu = /*#__PURE__*/function () {
       });
       window.addEventListener('resize', function () {
         return _this.disableOnDesktop();
+      });
+      window.addEventListener('touchstart', function (event) {
+        _this.startPosition = Math.floor(event.touches[0].clientX);
+      });
+      window.addEventListener('touchmove', function (event) {
+        _this.endPosition = Math.floor(event.touches[0].clientX);
+      });
+      window.addEventListener('touchend', function () {
+        _this.onTouchEnd();
       });
     } // Toggle menu
 
@@ -146,6 +157,25 @@ var ToggleMenu = /*#__PURE__*/function () {
         this.menu.setAttribute('aria-expanded', this.expanded);
         this.open = false;
       }
+    } // Function to display mobile nav on mobile touch slide
+
+  }, {
+    key: "onTouchEnd",
+    value: function onTouchEnd() {
+      var _this4 = this;
+
+      if (!this.touchEnabled) return false;
+      this.positionChange = this.endPosition - this.startPosition;
+      this.changeThreshold = 100;
+
+      if (this.positionChange > this.changeThreshold) {
+        this.toggle();
+      }
+
+      this.touchEnabled = false;
+      window.setTimeout(function () {
+        _this4.touchEnabled = true;
+      }, this.touchDuration);
     }
   }]);
 

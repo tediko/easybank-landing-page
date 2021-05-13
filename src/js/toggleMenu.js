@@ -27,7 +27,9 @@ export default class ToggleMenu {
         this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
         this.open = false;
         this.duration = 1000;
+        this.touchDuration = 1300;
         this.timer;
+        this.touchEnabled = true;
 
         return true;
     }
@@ -37,6 +39,16 @@ export default class ToggleMenu {
         this.menu.addEventListener('click', () => this.toggle());
         this.overlay.addEventListener('click', () => this.hide());
         window.addEventListener('resize', () => this.disableOnDesktop());
+        window.addEventListener('touchstart', (event) => {
+            this.startPosition = Math.floor(event.touches[0].clientX);
+        })
+        window.addEventListener('touchmove', (event) => {
+            this.endPosition = Math.floor(event.touches[0].clientX);
+        })
+
+        window.addEventListener('touchend', () => {
+            this.onTouchEnd();
+        })
     }
 
     // Toggle menu
@@ -99,5 +111,22 @@ export default class ToggleMenu {
             this.menu.setAttribute('aria-expanded', this.expanded);
             this.open = false;
         }
+    }
+    // Function to display mobile nav on mobile touch slide
+    onTouchEnd() {
+        if (!this.touchEnabled) return false;
+
+        this.positionChange = this.endPosition - this.startPosition;
+        this.changeThreshold = 100;
+
+        if (this.positionChange > this.changeThreshold) {
+            this.toggle();
+        }
+        
+        this.touchEnabled = false
+
+        window.setTimeout(() => {
+            this.touchEnabled = true;
+        }, this.touchDuration)
     }
 }
