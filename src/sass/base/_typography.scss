@@ -11,8 +11,10 @@ body {
     font-family: $ff-primary;
 }
 
+// Anchor elements
 a {
     text-decoration: none;
+    
     &:focus {
         outline: none;
     }
