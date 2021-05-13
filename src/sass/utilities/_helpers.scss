@@ -35,7 +35,7 @@
     &--gradient {
         @extend .btn;
         padding: 13px 25px;
-        background-image: linear-gradient(to right, #31d35c, #2bb7da);
+        background-image: linear-gradient(to right, $c-green-lime, $c-cyan);
         border-radius: 24px;
         font-size: 0.8rem;
         font-weight: 700;
