@@ -103,6 +103,17 @@ body {
   font-family: "Public Sans", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+a:focus-visible {
+  outline: 3px dashed #31d35c;
+  outline-offset: 4px;
+}
+
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?rk3na0");
@@ -212,13 +223,6 @@ i {
     width: 100%;
     margin: 0 auto;
   }
-}
-.header__logo:focus {
-  outline: none;
-}
-.header__logo:focus-visible {
-  outline: 3px dashed #31d35c;
-  outline-offset: 4px;
 }
 .header__logo-img {
   display: block;

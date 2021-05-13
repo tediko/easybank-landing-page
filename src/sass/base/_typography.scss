@@ -10,3 +10,15 @@ body {
     min-height: 100vh;
     font-family: $ff-primary;
 }
+
+a {
+    text-decoration: none;
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 3px dashed $c-green-lime;
+        outline-offset: 4px;
+    }
+}
