@@ -567,7 +567,7 @@ body {
 .kv__container::before {
   position: absolute;
   content: "";
-  top: -17.2vw;
+  top: -17vw;
   left: 0;
   width: 100%;
   height: 100%;
@@ -578,9 +578,9 @@ body {
 @media (min-width: 769px) {
   .kv__container::before {
     background-image: url("../img/bg-intro-desktop.svg");
-    background-size: 111%;
-    right: -41.6%;
-    top: -33.25%;
+    background-size: 108%;
+    right: -42%;
+    top: -32%;
     height: 113%;
     left: unset;
   }
@@ -600,19 +600,19 @@ body {
 @media (min-width: 769px) {
   .kv__mockups {
     order: 1;
-    flex: 60%;
+    flex: 55%;
   }
 }
 .kv__mockup-img {
   width: 100%;
-  margin-top: -35.5%;
+  margin-top: -36%;
 }
 @media (min-width: 769px) {
   .kv__mockup-img {
     margin-top: -19%;
-    width: 119.5%;
+    width: 120%;
     max-width: 767px;
-    transform: translateX(25.5%);
+    transform: translateX(22%);
   }
 }
 .kv__intro {

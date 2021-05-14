@@ -23,7 +23,7 @@ body {
         &::before {
             position: absolute;
             content: '';
-            top: -17.2vw;
+            top: -17vw;
             left: 0;
             width: 100%;
             height: 100%;
@@ -33,9 +33,9 @@ body {
 
             @include breakpoint('md') {
                 background-image: url("../img/bg-intro-desktop.svg");
-                background-size: 111%;
-                right: -41.6%;
-                top: -33.25%;
+                background-size: 108%;
+                right: -42%;
+                top: -32%;
                 height: 113%;
                 left: unset;
             }
@@ -55,19 +55,19 @@ body {
 
         @include breakpoint('md') {
             order: 1;
-            flex: 60%;
+            flex: 55%;
         }
     }
 
     &__mockup-img {
         width: 100%;
-        margin-top: -35.5%;
+        margin-top: -36%;
 
         @include breakpoint('md') {
             margin-top: -19%;
-            width: 119.5%;
+            width: 120%;
             max-width: 767px;
-            transform: translateX(25.5%);
+            transform: translateX(22%);
         }
     }
 
