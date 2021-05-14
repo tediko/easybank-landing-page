@@ -594,11 +594,11 @@ body {
     margin: 0 auto;
   }
 }
-.kv__mockups {
+.kv__mockup {
   position: relative;
 }
 @media (min-width: 769px) {
-  .kv__mockups {
+  .kv__mockup {
     order: 1;
     flex: 55%;
   }

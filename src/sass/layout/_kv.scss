@@ -50,7 +50,7 @@ body {
         }
     }
 
-    &__mockups {
+    &__mockup {
         position: relative;
 
         @include breakpoint('md') {
