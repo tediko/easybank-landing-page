@@ -854,6 +854,49 @@ i {
   margin-top: 7px;
 }
 
+.footer {
+  background-color: #2d314d;
+  padding: 41px 24px;
+}
+.footer__container {
+  display: grid;
+  justify-content: center;
+  gap: 31px;
+}
+.footer__logo {
+  display: flex;
+  justify-content: center;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  font-size: 1.4rem;
+}
+.footer__nav {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  gap: 19px;
+}
+.footer__nav-list {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+.footer__nav-item {
+  color: white;
+  font-size: 0.805rem;
+}
+.footer__nav-link {
+  color: inherit;
+}
+.footer__cta {
+  justify-self: center;
+}
+
 /* Base */
 /* Vendors */
 /* Utilities */
