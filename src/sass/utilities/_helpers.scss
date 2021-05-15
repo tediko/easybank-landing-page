@@ -106,12 +106,12 @@
 
     &--xl {
         @extend .heading;
-        font-size: 1.72rem;
+        font-size: clamp(1.72rem, 5vw, 2.138rem);
     }
 
     &--l {
         @extend .heading;
-        font-size: 1.08rem;
+        font-size: clamp(1.08rem, 2vw, 1.277rem);
     }
 
     &--m {
@@ -133,6 +133,15 @@
         @include breakpoint('lg') {
             line-height: 1.6;
             letter-spacing: -0.25px;
+        }
+    }
+
+    &--xm {
+        @extend .paragraph;
+        font-size: clamp(0.805rem, 2vw, 0.861rem);
+
+        @include breakpoint('md') {
+            line-height: 1.7;
         }
     }
 
