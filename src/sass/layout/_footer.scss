@@ -1,20 +1,47 @@
 @use '../utilities/' as *;
 
+/* body {
+    background-image: url('../../design/desktop-design.jpg');
+    background-size: 1440px auto;
+    opacity: 0.2;
+} */
+
 .footer {
     $root: &;
 
     background-color: $c-blue-dark;
     padding: 41px 24px;
 
+    @include breakpoint('md') {
+        padding: 46px 24px;
+    }
+
     &__container {
         display: grid;
         justify-content: center;
-        gap: 31px;
+        gap: 31px 0;
+
+        @include breakpoint('md') {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+            "logo nav cta"
+            "socials nav copy";
+        }
+        
+        @include breakpoint('lg') {
+            grid-template-columns: 1fr 1.5fr 1.4fr;
+        }
     }
 
     &__logo {
         display: flex;
         justify-content: center;
+
+        @include breakpoint('md') {
+            grid-area: logo;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
     }
 
     &__socials {
@@ -22,6 +49,13 @@
         justify-content: center;
         gap: 14px;
         font-size: 1.4rem;
+
+        @include breakpoint('md') {
+            grid-area: socials;  
+            justify-content: flex-start;
+            align-items: flex-start; 
+            font-size: 1rem;
+        }
     }
 
     &__nav {
@@ -30,6 +64,17 @@
         align-items: center;
         text-align: center;
         gap: 19px;
+
+        @include breakpoint('md') {
+            grid-area: nav;
+            flex-flow: row;
+            text-align: left;
+            gap: 70px;
+        }
+
+        @include breakpoint('lg') {
+            gap: 129px;
+        }
     }
 
     &__nav-list {
@@ -50,5 +95,17 @@
 
     &__cta {
         justify-self: center;
+
+        @include breakpoint('md') {
+            grid-area: cta;
+            justify-self: end;
+        }
+    }
+
+    &__copy {
+        @include breakpoint('md') {
+            grid-area: copy;
+            justify-self: end;
+        }
     }
 }

@@ -773,6 +773,11 @@ i {
   background-color: #fafafa;
   padding: 93px 24px 111px 24px;
 }
+@media (min-width: 1025px) {
+  .articles {
+    padding: 93px 24px 80px 24px;
+  }
+}
 .articles__heading {
   text-align: center;
 }
@@ -854,18 +859,46 @@ i {
   margin-top: 7px;
 }
 
+/* body {
+    background-image: url('../../design/desktop-design.jpg');
+    background-size: 1440px auto;
+    opacity: 0.2;
+} */
 .footer {
   background-color: #2d314d;
   padding: 41px 24px;
 }
+@media (min-width: 769px) {
+  .footer {
+    padding: 46px 24px;
+  }
+}
 .footer__container {
   display: grid;
   justify-content: center;
-  gap: 31px;
+  gap: 31px 0;
+}
+@media (min-width: 769px) {
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logo nav cta" "socials nav copy";
+  }
+}
+@media (min-width: 1025px) {
+  .footer__container {
+    grid-template-columns: 1fr 1.5fr 1.4fr;
+  }
 }
 .footer__logo {
   display: flex;
   justify-content: center;
+}
+@media (min-width: 769px) {
+  .footer__logo {
+    grid-area: logo;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 .footer__socials {
   display: flex;
@@ -873,12 +906,33 @@ i {
   gap: 14px;
   font-size: 1.4rem;
 }
+@media (min-width: 769px) {
+  .footer__socials {
+    grid-area: socials;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+}
 .footer__nav {
   display: flex;
   flex-flow: column;
   align-items: center;
   text-align: center;
   gap: 19px;
+}
+@media (min-width: 769px) {
+  .footer__nav {
+    grid-area: nav;
+    flex-flow: row;
+    text-align: left;
+    gap: 70px;
+  }
+}
+@media (min-width: 1025px) {
+  .footer__nav {
+    gap: 129px;
+  }
 }
 .footer__nav-list {
   list-style: none;
@@ -895,6 +949,18 @@ i {
 }
 .footer__cta {
   justify-self: center;
+}
+@media (min-width: 769px) {
+  .footer__cta {
+    grid-area: cta;
+    justify-self: end;
+  }
+}
+@media (min-width: 769px) {
+  .footer__copy {
+    grid-area: copy;
+    justify-self: end;
+  }
 }
 
 /* Base */
