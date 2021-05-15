@@ -48,7 +48,8 @@
 
     &__mockup {
         position: relative;
-
+        z-index: 2;
+        
         @include breakpoint('md') {
             order: 1;
             flex: 55%;
