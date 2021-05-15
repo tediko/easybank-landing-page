@@ -1,9 +1,9 @@
-@use '../utilities/' as * ;
+@use '../utilities/' as *;
 
 .articles {
     $root: &;
     background-color: $c-gray-light;
-    padding: 93px 24px;
+    padding: 93px 24px 111px 24px;
 
     &__heading {
         text-align: center;
