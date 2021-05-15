@@ -1,12 +1,12 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
-// Overflow
+/* Overflow */
 .overflow {
     overflow: hidden;
 }
 
-// Overlay
+/* Overlay */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@
     }
 }
 
-// Buttons
+/* Buttons */
 .btn {
     display: flex;
     color: $c-white;
@@ -43,7 +43,7 @@
         overflow: hidden;
         transition: padding 250ms ease-in-out;
 
-        // Background for hover
+        /* Background for hover */
         &::after {
             position: absolute;
             content: '';
@@ -56,7 +56,7 @@
             background: transparentize($c-white, 0.7);
         }
 
-        // Shine effect for hover
+        /* Shine effect for hover */
         &::before {
             position: absolute;
             content: '';
@@ -93,7 +93,7 @@
     }
 }
 
-// Headings
+/* Headings */
 .heading {
     font-weight: 300;
     color: $c-blue-dark;
@@ -101,7 +101,7 @@
 
     &--xxl {
         @extend .heading;
-        font-size: 2.13rem;
+        font-size: clamp(2.13rem, 5vw, 3rem);
     }
 
     &--xl {
@@ -122,14 +122,18 @@
 }
 
 /* Paragraphs */
-
 .paragraph {
     color: $c-blue-grayish;
     line-height: 1.75;
 
     &--l {
         @extend .paragraph;
-        font-size: 0.805rem;
+        font-size: clamp(0.805rem, 2vw, 1rem);
+
+        @include breakpoint('lg') {
+            line-height: 1.6;
+            letter-spacing: -0.25px;
+        }
     }
 
     &--m {
