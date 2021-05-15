@@ -151,6 +151,11 @@
         line-height: 1.45;
     }
 
+    &--ls {
+        @extend .paragraph;
+        font-size: 0.805rem;
+    }
+
     &--s {
         @extend .paragraph;
         font-size: 0.541rem;
