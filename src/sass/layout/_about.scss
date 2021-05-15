@@ -1,0 +1,43 @@
+@use '../utilities/' as *;
+
+.about {
+    $root: &;
+    background-color: $c-blue-grayish-light;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        padding: 61px 24px 61px 24px;
+    }
+
+    &__info {
+        text-align: center;
+        max-width: 440px;
+    }
+
+    &__info-text {
+        margin-top: 17px;
+    }
+
+    &__features {
+        display: flex;
+        flex-flow: wrap;
+        gap: 31px;
+        margin-top: 55px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__features-card {
+        flex-basis: 325px;
+    }
+
+    &__features-heading {
+        margin-top: 22px;
+    }
+
+    &__features-text {
+        margin-top: 18px;
+    }
+}
