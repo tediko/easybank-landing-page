@@ -273,7 +273,7 @@ i {
 }
 
 /* Paragraphs */
-.paragraph, .paragraph--s, .paragraph--m, .paragraph--xm, .paragraph--l {
+.paragraph, .paragraph--s, .paragraph--ls, .paragraph--m, .paragraph--xm, .paragraph--l {
   color: #9698a6;
   line-height: 1.75;
 }
@@ -297,6 +297,9 @@ i {
 .paragraph--m {
   font-size: 0.694rem;
   line-height: 1.45;
+}
+.paragraph--ls {
+  font-size: 0.805rem;
 }
 .paragraph--s {
   font-size: 0.541rem;
@@ -768,7 +771,7 @@ i {
 
 .articles {
   background-color: #fafafa;
-  padding: 93px 24px;
+  padding: 93px 24px 111px 24px;
 }
 .articles__heading {
   text-align: center;
