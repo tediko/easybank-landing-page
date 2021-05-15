@@ -10,8 +10,94 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggleMenu */ "./src/js/toggleMenu.js");
+/* harmony import */ var _articlesHover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./articlesHover */ "./src/js/articlesHover.js");
+
 
 var menu = new _toggleMenu__WEBPACK_IMPORTED_MODULE_0__.default();
+var hover = new _articlesHover__WEBPACK_IMPORTED_MODULE_1__.default();
+
+/***/ }),
+
+/***/ "./src/js/articlesHover.js":
+/*!*********************************!*\
+  !*** ./src/js/articlesHover.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ArticlesHover)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ArticlesHover = /*#__PURE__*/function () {
+  function ArticlesHover() {
+    _classCallCheck(this, ArticlesHover);
+
+    if (!this.vars()) return false;
+    this.setupEvents();
+  }
+
+  _createClass(ArticlesHover, [{
+    key: "vars",
+    value: function vars() {
+      this.selectors = {
+        cards: 'data-card',
+        activeClass: 'hover'
+      };
+      this.cards = document.querySelectorAll("[".concat(this.selectors.cards, "]"));
+      if (!this.cards) return false;
+      return true;
+    }
+    /* Cards event listeners */
+
+  }, {
+    key: "setupEvents",
+    value: function setupEvents() {
+      var _this = this;
+
+      this.cards.forEach(function (card) {
+        card.addEventListener('mouseenter', function (event) {
+          return _this.fade(event);
+        });
+        card.addEventListener('mouseleave', function () {
+          return _this.clear();
+        });
+      });
+    }
+    /* Add activeClass to cards that are not hovered */
+
+  }, {
+    key: "fade",
+    value: function fade(event) {
+      var _this2 = this;
+
+      this.hoveredCard = event.target;
+      this.cards.forEach(function (card) {
+        _this2.hoveredCard != card ? card.classList.add("".concat(_this2.selectors.activeClass)) : null;
+      });
+    }
+    /* Remove activeClass from every card */
+
+  }, {
+    key: "clear",
+    value: function clear() {
+      var _this3 = this;
+
+      this.cards.forEach(function (card) {
+        card.classList.remove("".concat(_this3.selectors.activeClass));
+      });
+    }
+  }]);
+
+  return ArticlesHover;
+}();
+
+
 
 /***/ }),
 
