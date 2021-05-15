@@ -668,12 +668,6 @@ i {
   }
 }
 
-body {
-  background-image: url("../../design/desktop-design.jpg");
-  background-size: 1440px auto;
-  opacity: 0.2;
-}
-
 .about {
   position: relative;
   background-color: #f3f4f6;
