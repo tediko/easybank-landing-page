@@ -1,10 +1,10 @@
 @use '../utilities/' as * ;
 
-/* body {
-    background-image: url('../../design/mobile-design.jpg');
-    background-size: 375px auto;
+body {
+    background-image: url('../../design/desktop-design.jpg');
+    background-size: 1440px auto;
     opacity: 0.2;
-} */
+}
 
 .articles {
     $root: &;
@@ -13,6 +13,10 @@
 
     &__heading {
         text-align: center;
+
+        @include breakpoint('lg') {
+            text-align: left;
+        }
     }
 
     &__cards {
@@ -21,6 +25,11 @@
         justify-content: center;
         gap: 24px;
         margin-top: 32px;
+
+        @include breakpoint('lg') {
+            justify-content: space-between;
+            margin-top: 47px;
+        }
     }
 
     &__card {
@@ -28,6 +37,14 @@
         background-color: $c-white;
         border-radius: 6px;
         overflow: hidden;
+
+        @include breakpoint('md') {
+            flex-basis: clamp(348px, 45vw, 470px);
+        }
+
+        @include breakpoint('lg') {
+            flex-basis: clamp(221px, 22vw, 255px);
+        }
     }
 
     &__card-preview {
@@ -43,6 +60,10 @@
 
     &__card-info {
         padding: 21px 31px 39px 31px;
+
+        @include breakpoint('lg') {
+            padding: 21px 24px 26px 24px;
+        }
     }
 
     &__card-heading {

@@ -296,7 +296,7 @@ i {
 }
 .paragraph--m {
   font-size: 0.694rem;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 .paragraph--s {
   font-size: 0.541rem;
@@ -766,17 +766,23 @@ i {
   }
 }
 
-/* body {
-    background-image: url('../../design/mobile-design.jpg');
-    background-size: 375px auto;
-    opacity: 0.2;
-} */
+body {
+  background-image: url("../../design/desktop-design.jpg");
+  background-size: 1440px auto;
+  opacity: 0.2;
+}
+
 .articles {
   background-color: #fafafa;
   padding: 93px 24px;
 }
 .articles__heading {
   text-align: center;
+}
+@media (min-width: 1025px) {
+  .articles__heading {
+    text-align: left;
+  }
 }
 .articles__cards {
   display: flex;
@@ -785,11 +791,27 @@ i {
   gap: 24px;
   margin-top: 32px;
 }
+@media (min-width: 1025px) {
+  .articles__cards {
+    justify-content: space-between;
+    margin-top: 47px;
+  }
+}
 .articles__card {
   flex-basis: 520px;
   background-color: white;
   border-radius: 6px;
   overflow: hidden;
+}
+@media (min-width: 769px) {
+  .articles__card {
+    flex-basis: clamp(348px, 45vw, 470px);
+  }
+}
+@media (min-width: 1025px) {
+  .articles__card {
+    flex-basis: clamp(221px, 22vw, 255px);
+  }
 }
 .articles__card-preview {
   height: 200px;
@@ -803,6 +825,11 @@ i {
 }
 .articles__card-info {
   padding: 21px 31px 39px 31px;
+}
+@media (min-width: 1025px) {
+  .articles__card-info {
+    padding: 21px 24px 26px 24px;
+  }
 }
 .articles__card-heading {
   margin-top: 7px;
