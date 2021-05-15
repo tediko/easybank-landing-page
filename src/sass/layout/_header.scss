@@ -17,12 +17,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @include breakpoint('md') {
-            max-width: 1110px;
-            width: 100%;
-            margin: 0 auto;
-        }
     }
 
     &__logo-img {

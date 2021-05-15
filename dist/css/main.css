@@ -293,6 +293,12 @@ i {
   font-size: 0.541rem;
 }
 
+/* Spacing */
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
 .header {
   position: relative;
   padding: 22px 24px;
@@ -309,13 +315,6 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-@media (min-width: 769px) {
-  .header__container {
-    max-width: 1110px;
-    width: 100%;
-    margin: 0 auto;
-  }
 }
 .header__logo-img {
   display: block;
@@ -606,8 +605,6 @@ i {
     flex-flow: row;
     align-items: flex-start;
     padding: 0;
-    max-width: 1110px;
-    margin: 0 auto;
   }
 }
 .kv__mockup {
