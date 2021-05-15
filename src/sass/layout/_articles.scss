@@ -5,12 +5,15 @@
     background-color: $c-gray-light;
     padding: 93px 24px 111px 24px;
 
+    @include breakpoint('lg') {
+        padding: 93px 24px 80px 24px;
+    }
+    
     &__heading {
         text-align: center;
 
         @include breakpoint('lg') {
             text-align: left;
-            padding: 93px 24px 80px 24px;
         }
     }
 
