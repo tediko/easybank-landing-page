@@ -1,11 +1,5 @@
 @use '../utilities/' as * ;
 
-body {
-    background-image: url('../../design/desktop-design.jpg');
-    background-size: 1440px auto;
-    opacity: 0.2;
-}
-
 .articles {
     $root: &;
     background-color: $c-gray-light;
@@ -40,6 +34,16 @@ body {
 
         @include breakpoint('md') {
             flex-basis: clamp(348px, 45vw, 470px);
+            transition: transform 350ms ease-in-out,
+                        opacity 300ms ease-in;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            &.hover {
+                opacity: 0.4;
+            }
         }
 
         @include breakpoint('lg') {
@@ -68,6 +72,13 @@ body {
 
     &__card-heading {
         margin-top: 7px;
+        
+        @include breakpoint('md') {
+            transition: color 350ms ease-in-out;
+            &:hover {
+                color: $c-green-lime;
+            }
+        }
     }
 
     &__card-link {
