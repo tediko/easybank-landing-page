@@ -9,6 +9,15 @@ html {
 body {
     min-height: 100vh;
     font-family: $ff-primary;
+
+    &.header-scroll-in {
+        position: relative;
+        top: 64px; /* header height */
+
+        @include breakpoint('md') {
+            top: 79px;
+        }
+    }
 }
 
 // Anchor elements

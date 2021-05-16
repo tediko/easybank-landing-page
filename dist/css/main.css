@@ -45,6 +45,47 @@ ol[role=list] {
 /* Fonts */
 /* Media query breakpoints */
 /* Mixin to manage responsive breakpoints */
+/* Header */
+@-webkit-keyframes scroll-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scroll-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes scroll-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+}
+@keyframes scroll-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+}
 /* Navigation */
 @-webkit-keyframes nav-in {
   0% {
@@ -146,6 +187,16 @@ html {
 body {
   min-height: 100vh;
   font-family: "Public Sans", sans-serif;
+}
+body.header-scroll-in {
+  position: relative;
+  top: 64px;
+  /* header height */
+}
+@media (min-width: 769px) {
+  body.header-scroll-in {
+    top: 79px;
+  }
 }
 
 a {
@@ -361,6 +412,17 @@ i {
   padding: 22px 24px;
   background-color: white;
   z-index: 20;
+}
+.header.header-scroll-in {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-animation: scroll-in 300ms ease-in-out forwards;
+          animation: scroll-in 300ms ease-in-out forwards;
+}
+.header.header-scroll-out {
+  -webkit-animation: scroll-out 300ms ease-in-out forwards;
+          animation: scroll-out 300ms ease-in-out forwards;
 }
 @media (min-width: 769px) {
   .header {
