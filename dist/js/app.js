@@ -11,10 +11,13 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggleMenu */ "./src/js/toggleMenu.js");
 /* harmony import */ var _articlesHover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./articlesHover */ "./src/js/articlesHover.js");
+/* harmony import */ var _stickyNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stickyNav */ "./src/js/stickyNav.js");
+
 
 
 var menu = new _toggleMenu__WEBPACK_IMPORTED_MODULE_0__.default();
 var hover = new _articlesHover__WEBPACK_IMPORTED_MODULE_1__.default();
+var header = new _stickyNav__WEBPACK_IMPORTED_MODULE_2__.default();
 
 /***/ }),
 
@@ -95,6 +98,96 @@ var ArticlesHover = /*#__PURE__*/function () {
   }]);
 
   return ArticlesHover;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/js/stickyNav.js":
+/*!*****************************!*\
+  !*** ./src/js/stickyNav.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ StickyNav)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var StickyNav = /*#__PURE__*/function () {
+  function StickyNav() {
+    _classCallCheck(this, StickyNav);
+
+    if (!this.vars()) return false;
+    this.setupEvents();
+  }
+
+  _createClass(StickyNav, [{
+    key: "vars",
+    value: function vars() {
+      this.selectors = {
+        body: 'data-body',
+        header: 'data-header',
+        sectionKv: 'data-kv',
+        activeClass: 'header-scroll-in',
+        inActiveClass: 'header-scroll-out'
+      };
+      this.body = document.querySelector("[".concat(this.selectors.body, "]"));
+      this.header = document.querySelector("[".concat(this.selectors.header, "]"));
+      this.sectionKv = document.querySelector("[".concat(this.selectors.sectionKv, "]"));
+      if (!this.body || !this.header || !this.sectionKv) return false;
+      this.isInitialized = false;
+      this.animDuration = 300;
+      return true;
+    }
+  }, {
+    key: "setupEvents",
+    value: function setupEvents() {
+      this.navObserver(this.sectionKv);
+    }
+  }, {
+    key: "navObserver",
+    value: function navObserver(element) {
+      var _this = this;
+
+      this.options = {
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+      this.observer = new IntersectionObserver(function (entries) {
+        if (_this.isInitialized) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              _this.header.classList.add("".concat(_this.selectors.activeClass));
+
+              _this.body.classList.add("".concat(_this.selectors.activeClass));
+            } else {
+              _this.header.classList.add("".concat(_this.selectors.inActiveClass));
+
+              window.setTimeout(function () {
+                _this.header.classList.remove("".concat(_this.selectors.activeClass));
+
+                _this.header.classList.remove("".concat(_this.selectors.inActiveClass));
+
+                _this.body.classList.remove("".concat(_this.selectors.activeClass));
+              }, _this.animDuration);
+            }
+          });
+        }
+
+        _this.isInitialized = true;
+      }, this.options);
+      this.observer.observe(element);
+    }
+  }]);
+
+  return StickyNav;
 }();
 
 
