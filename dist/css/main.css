@@ -361,6 +361,14 @@ i {
   color: #fff;
 }
 
+/* Pause animation until images are loaded */
+.loading *,
+.loading *:before,
+.loading *:after {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+
 /* Skip to content link */
 .skip-to-content-link {
   position: fixed;
