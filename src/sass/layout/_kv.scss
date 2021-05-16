@@ -59,12 +59,14 @@
     &__mockup-img {
         width: 100%;
         margin-top: -36%;
-
+        animation: kv-mockup-slide 1s ease-in-out forwards;
+        
         @include breakpoint('md') {
             margin-top: -19%;
             width: 120%;
             max-width: 767px;
             transform: translateX(22%);
+            animation: kv-mockup-slide-desktop 1s ease-in-out forwards;
         }
     }
 
