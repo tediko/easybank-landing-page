@@ -819,6 +819,8 @@ i {
   background-image: url("../img/bg-intro-mobile.svg");
   background-size: 100%;
   background-repeat: no-repeat;
+  -webkit-animation: kv-container-opacity 1000ms ease-in-out forwards;
+          animation: kv-container-opacity 1000ms ease-in-out forwards;
 }
 @media (min-width: 769px) {
   .kv__container::before {
