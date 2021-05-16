@@ -9,15 +9,18 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggleMenu */ "./src/js/toggleMenu.js");
-/* harmony import */ var _articlesHover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./articlesHover */ "./src/js/articlesHover.js");
-/* harmony import */ var _stickyNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stickyNav */ "./src/js/stickyNav.js");
+/* harmony import */ var _loadEvents__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loadEvents */ "./src/js/loadEvents.js");
+/* harmony import */ var _stickyNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stickyNav */ "./src/js/stickyNav.js");
+/* harmony import */ var _toggleMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./toggleMenu */ "./src/js/toggleMenu.js");
+/* harmony import */ var _articlesHover__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./articlesHover */ "./src/js/articlesHover.js");
 
 
 
-var menu = new _toggleMenu__WEBPACK_IMPORTED_MODULE_0__.default();
-var hover = new _articlesHover__WEBPACK_IMPORTED_MODULE_1__.default();
-var header = new _stickyNav__WEBPACK_IMPORTED_MODULE_2__.default();
+
+var load = new _loadEvents__WEBPACK_IMPORTED_MODULE_0__.default();
+var header = new _stickyNav__WEBPACK_IMPORTED_MODULE_1__.default();
+var menu = new _toggleMenu__WEBPACK_IMPORTED_MODULE_2__.default();
+var hover = new _articlesHover__WEBPACK_IMPORTED_MODULE_3__.default();
 
 /***/ }),
 
@@ -98,6 +101,64 @@ var ArticlesHover = /*#__PURE__*/function () {
   }]);
 
   return ArticlesHover;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/js/loadEvents.js":
+/*!******************************!*\
+  !*** ./src/js/loadEvents.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LoadEvents)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var LoadEvents = /*#__PURE__*/function () {
+  function LoadEvents() {
+    _classCallCheck(this, LoadEvents);
+
+    if (!this.vars()) return false;
+    this.setupEvents();
+  }
+
+  _createClass(LoadEvents, [{
+    key: "vars",
+    value: function vars() {
+      this.selectors = {
+        body: 'data-body',
+        activeClass: 'loading'
+      };
+      this.body = document.querySelector("[".concat(this.selectors.body, "]"));
+      if (!this.body) return false;
+      return true;
+    }
+  }, {
+    key: "setupEvents",
+    value: function setupEvents() {
+      var _this = this;
+
+      window.addEventListener('load', function () {
+        return _this.show();
+      });
+    }
+  }, {
+    key: "show",
+    value: function show() {
+      this.body.classList.remove("".concat(this.selectors.activeClass));
+    }
+  }]);
+
+  return LoadEvents;
 }();
 
 
