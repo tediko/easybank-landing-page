@@ -28,6 +28,7 @@
             background-image: url('../img/bg-intro-mobile.svg');
             background-size: 100%;
             background-repeat: no-repeat;
+            animation: kv-container-opacity 1000ms ease-in-out forwards;
 
             @include breakpoint('md') {
                 background-image: url("../img/bg-intro-desktop.svg");
