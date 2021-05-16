@@ -76,6 +76,7 @@
         text-align: center;
         margin-top: 25px;
         max-width: 500px;
+        animation: kv-intro-slide 1s ease-in-out forwards;
 
         @include breakpoint('md') {
             order: 0;
@@ -83,6 +84,7 @@
             text-align: left;
             flex: 40%;
             transform: translateY(47%);
+            animation: kv-intro-slide-desktop 1s ease-in-out forwards;
         }
     }
 
