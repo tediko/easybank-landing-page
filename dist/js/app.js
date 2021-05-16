@@ -284,6 +284,7 @@ var ToggleMenu = /*#__PURE__*/function () {
     value: function vars() {
       this.selectors = {
         body: 'data-body',
+        header: 'data-header',
         nav: 'data-nav',
         menu: 'data-menu',
         overlay: 'data-overlay',
@@ -291,13 +292,15 @@ var ToggleMenu = /*#__PURE__*/function () {
         navOpenClass: 'nav-open',
         navCloseClass: 'nav-close',
         activeClass: 'active',
-        overflowClass: 'overflow'
+        overflowClass: 'overflow',
+        headerClass: 'header-scroll-in'
       };
       this.body = document.querySelector("[".concat(this.selectors.body, "]"));
+      this.header = document.querySelector("[".concat(this.selectors.header, "]"));
       this.nav = document.querySelector("[".concat(this.selectors.nav, "]"));
       this.menu = document.querySelector("[".concat(this.selectors.menu, "]"));
       this.overlay = document.querySelector("[".concat(this.selectors.overlay, "]"));
-      if (!this.body || !this.nav || !this.menu || !this.overlay) return false;
+      if (!this.body || !this.header || !this.nav || !this.menu || !this.overlay) return false;
       this.expanded = this.menu.getAttribute('aria-expanded') === false ? false : true;
       this.open = false;
       this.duration = 1000;
@@ -348,6 +351,8 @@ var ToggleMenu = /*#__PURE__*/function () {
       this.nav.classList.add("".concat(this.selectors.navOpenClass));
       this.overlay.classList.add("".concat(this.selectors.activeClass));
       this.body.classList.add("".concat(this.selectors.overflowClass));
+      this.body.classList.add("".concat(this.selectors.headerClass));
+      this.header.classList.add("".concat(this.selectors.headerClass));
       this.expanded = true;
       this.menu.setAttribute('aria-expanded', this.expanded);
       this.open = true;
