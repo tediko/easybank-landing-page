@@ -42,6 +42,7 @@ Hello! This is my solution to [Easybank landing page - Frontend Mentor](https://
 
  - Webpack
  - SCSS
+ - BEM methodology
  - Mobile first
  - Semantic HTML5 markup
  - JavaScript
@@ -54,7 +55,7 @@ Hello! This is my solution to [Easybank landing page - Frontend Mentor](https://
 - Added ***touch-enabled*** mobile navigation. It's hard to reach for the hamburger menu on larger phones so I added a menu that is enabled by touchmove feature. Swipe from left to right to open menu on mobiles. 
 - Implemented ***Skip to content*** link. Skip links are little internal navigation links that help users move around a page. It is used as an accessibility enhancement that lets keyboard users and screen readers jump from the top of the page to the content without have to go through other elements on the page first.
 - Applied ***load events*** to prevent animating content before assets has downloaded. In short it is using JavaScript to listen for a load event, and make use `animation-play-state` to pause our animations until the assets has downloaded. This one I found in [Anna](https://www.frontendmentor.io/solutions/easybank-landing-page-grid-css-animations-js-scss-PC1gxE5Df) solution, so special thanks to her.
-- Instead of repeat code for reusable elements i write some ***helper classes*** to reuse them throughout the project. I created classes for headings, paragraphs, buttons, container. This saves time as well as unnecessary code repetition. I will definitely try to improve in this aspect.
+- Instead of repeat code for reusable elements i write some ***helper classes*** to reuse them throughout the project. I created classes for headings, paragraphs, container. This saves time as well as unnecessary code repetition. I will definitely try to improve in this aspect.
 - Added ***sticky nav menu*** using `Intersection Observer API`. In short, this API is a native way of detecting if an object has entered the viewport. My observer looking at `.kv` section, and if that section is no longer interacting with viewport it triggers my header to appear.
 - I used Sass at-rules `@for` which is a simple ***for loop*** to transition my `header__nav-item`'s while my mobile menu is open.
 - Implemented `prefers-reduced-motion` CSS media feature which is used to detect if the user has requested that the system minimize the amount of non-essential motion it uses. Prevent animations in brief.
